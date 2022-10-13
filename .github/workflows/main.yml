@@ -16,10 +16,10 @@ jobs:
           REACT_APP_API_URL: https://mordomo-digital-api.herokuapp.com
           REACT_APP_JWT_SECRET: ${{ secrets.REACT_APP_JWT_SECRET }}
           REACT_APP_FIREBASE_APIKEY: ${{ secrets.REACT_APP_FIREBASE_APIKEY }}
-          REACT_APP_FIREBASE_AUTHDOMAIN: mordomo-digital.firebaseapp.com
-          REACT_APP_FIREBASE_DATABASEURL: https://mordomo-digital.firebaseio.com
-          REACT_APP_FIREBASE_PROJECTID: mordomo-digital
-          REACT_APP_FIREBASE_STORAGEBUCKET: mordomo-digital.appspot.com
+          REACT_APP_FIREBASE_AUTHDOMAIN: mordomo-digital-backoffice.firebaseapp.com
+          # REACT_APP_FIREBASE_DATABASEURL: https://mordomo-digital.firebaseio.com
+          REACT_APP_FIREBASE_PROJECTID: mordomo-digital-backoffice
+          REACT_APP_FIREBASE_STORAGEBUCKET: mordomo-digital-backoffice.appspot.com
           REACT_APP_FIREBASE_MESSAGINGSENDERID: ${{ secrets.REACT_APP_FIREBASE_MESSAGINGSENDERID }}
           REACT_APP_FIREBASE_APPID: ${{ secrets.REACT_APP_FIREBASE_APPID }}
           REACT_APP_FIREBASE_MEASUREMENTID: ${{ secrets.REACT_APP_FIREBASE_MEASUREMENTID }}
