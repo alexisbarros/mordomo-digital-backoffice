@@ -22,7 +22,7 @@ const LoginView = (props) => {
                         <div className='login-align-center'>
                             <img src={icon} alt='icon' className='login-icon' />
                             <div>Mordomo Digital</div>
-                            <div className='login-subtitle'>Backoffice v1.0</div>
+                            <div className='login-subtitle'>Backoffice v1.0 </div>
                         </div>
                     }
                 >
