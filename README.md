@@ -35,7 +35,7 @@ Follow the instructions below to copy the project and run locally.
 
 ### Prerequisites
 
-As prerequisites to run the project is needed to have Node.js and the package manager NPM installed in you machine.
+As prerequisites to run the project is needed to have Node.js 14 and the package manager NPM installed in you machine.
 
 The backend server needs to be runing too. The backend repo can be access [here](https://github.com/alexisbarros/mordomo-digital-api.git).
 
