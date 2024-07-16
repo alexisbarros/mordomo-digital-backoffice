@@ -9,12 +9,13 @@ import ListView from './ListView';
 import { apiRequestGet } from '../../../utils/api-request';
 
 const ListContainer = (props) => {
-
     /**
      * Get data.
      */
     const [loading, setLoading] = useState(false);
     const [data, setData] = useState([]);
+    const [filteredData, setFilteredData] = useState([]);
+    const [search, setSearch] = useState('');
     const [roomTypes, setRoomTypes] = useState([]);
     const getData = async () => {
         setLoading(true);
@@ -38,6 +39,7 @@ const ListContainer = (props) => {
                 setRoomTypes([...roomTypes]);
 
                 setData([...roomTasks]);
+                setFilteredData([...roomTasks]);
                 setLoading(false);
             }
 
@@ -50,10 +52,25 @@ const ListContainer = (props) => {
     };
 
     useEffect(() => {
-
         getData();
-
     }, []);
+
+    useEffect(() => {
+        filterData(search);
+    }, [search]);
+
+    const filterData = (value) => {
+        setSearch(value);
+
+        if (value === '') {
+            setFilteredData(data);
+        } else {
+            const filteredData = data.filter(el => {
+                return el.name.toLowerCase().includes(value.toLowerCase());
+            });
+            setFilteredData(filteredData);
+        }
+    }
 
     /**
      * Method to remove.
@@ -91,7 +108,9 @@ const ListContainer = (props) => {
         <ListView
 
             loading={loading}
-            data={data}
+            data={filteredData}
+            filterData={value => filterData(value)}
+            search={search}
             removeData={id => removeData(id)}
 
             roomTypes={roomTypes}

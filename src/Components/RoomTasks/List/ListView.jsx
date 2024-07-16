@@ -1,8 +1,8 @@
 import React from 'react';
 
 // Modules
-import { Card, Table, Space, Button, Breadcrumb, Modal } from 'antd';
-import { ExclamationCircleOutlined } from '@ant-design/icons';
+import { Card, Table, Space, Button, Breadcrumb, Modal, Input } from 'antd';
+import { ExclamationCircleOutlined, SearchOutlined } from '@ant-design/icons';
 import { Link } from 'react-router-dom';
 
 // Styles
@@ -103,6 +103,14 @@ const ListView = (props) => {
                             Adicionar
                         </Button>
                     </Link>
+
+                    <Input
+                        placeholder='Pesquisar'
+                        value={props.search}
+                        onChange={(e) => props.filterData(e.target.value)}
+                        style={{ marginBottom: 10 }}
+                        prefix={<SearchOutlined />}
+                    />
 
                     <Table
                         dataSource={dataSource}
