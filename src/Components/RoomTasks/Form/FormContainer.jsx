@@ -19,6 +19,7 @@ const FormContainer = (props) => {
     needToHireLabor: false,
     videoUrl: '',
     steps: [],
+    notificationRecipient: '',
   });
 
   const [roomTypes, setRoomTypes] = useState([]);
@@ -66,7 +67,7 @@ const FormContainer = (props) => {
               arrayOfDefaultFrequency.length === 0 ||
               (arrayOfDefaultFrequency[index] &&
                 arrayOfDefaultFrequency[index]["roomType"]) !==
-                roomTypeToAdd["roomId"]
+              roomTypeToAdd["roomId"]
             ) {
               let defaultFrequencyToAdd = {
                 roomType: localRoomTypes[index]["_id"],
@@ -91,6 +92,7 @@ const FormContainer = (props) => {
           videoUrl: apiResponse.data["videoUrl"],
           steps: apiResponse.data["steps"],
           defaultFrequency: arrayOfDefaultFrequency,
+          notificationRecipient: apiResponse.data["notificationRecipient"],
         });
         setRoomTypes([...arrayOfRoomTypes]);
       } else {
@@ -127,6 +129,7 @@ const FormContainer = (props) => {
       defaultFrequency: JSON.stringify(form.defaultFrequency),
       steps: JSON.stringify(form.steps),
       needToHireLabor: form.needToHireLabor,
+      notificationRecipient: form.notificationRecipient,
     };
 
     // Call API.

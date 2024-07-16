@@ -57,7 +57,7 @@ const FormView = (props) => {
                                 onChange={e => props.setForm({ ...props.form, name: e.target.value })}
                             />
                         </Form.Item>
-                        
+
                         <Form.Item
                             label="Descrição"
                             style={{ width: 500 }}
@@ -67,7 +67,7 @@ const FormView = (props) => {
                                 onChange={e => props.setForm({ ...props.form, description: e.target.value })}
                             />
                         </Form.Item>
-                        
+
                         <Form.Item
                             label="URL do vídeo"
                             style={{ width: 500 }}
@@ -85,6 +85,19 @@ const FormView = (props) => {
                                 checked={props.form.needToHireLabor}
                                 onChange={e => props.setForm({ ...props.form, needToHireLabor: e })}
                             />
+                        </Form.Item>
+
+                        <Form.Item
+                            label='Destinatário da notificação'
+                            style={{ width: 500 }}
+                        >
+                            <Select
+                                value={props.form.notificationRecipient}
+                                onChange={e => props.setForm({ ...props.form, notificationRecipient: e })}
+                            >
+                                <Select.Option value="Manager">Gestor</Select.Option>
+                                <Select.Option value="Employee">Funcionário</Select.Option>
+                            </Select>
                         </Form.Item>
 
                         <Form.Item
