@@ -91,6 +91,7 @@ const FormContainer = (props) => {
           description: apiResponse.data["description"],
           videoUrl: apiResponse.data["videoUrl"],
           steps: apiResponse.data["steps"],
+          needToHireLabor: apiResponse.data["needToHireLabor"],
           defaultFrequency: arrayOfDefaultFrequency,
           notificationRecipient: apiResponse.data["notificationRecipient"],
         });
