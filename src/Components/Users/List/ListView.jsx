@@ -109,6 +109,44 @@ const ListView = (props) => {
       },
     },
     {
+      title: "Canal de entrada",
+      dataIndex: "subscription",
+      key: "platform",
+      render: (e) => {
+        if (e?.platform === 'android') return "Android";
+        if (e?.platform === 'ios') return "IOS";
+        return '-';
+      },
+      filters: [
+        { text: "Android", value: 'android' },
+        { text: "IOS", value: 'ios' },
+        { text: "-", value: null },
+      ],
+      onFilter: (value, record) => {
+        if (value === record?.subscription?.platform) return true;
+        return false;
+      },
+    },
+    {
+      title: "Assinatura vigente",
+      dataIndex: "subscription",
+      key: "subscriptionType",
+      render: (e) => {
+        if (e?.type === 'monthly' && e?.status === 'active') return "Mensal";
+        if (e?.type === 'yearly' && e?.status === 'active') return "Anual";
+        return '-';
+      },
+      filters: [
+        { text: "Mensal", value: 'monthly' },
+        { text: "Anual", value: 'yearly' },
+        { text: "-", value: null },
+      ],
+      onFilter: (value, record) => {
+        if (value === record?.subscription?.type && record?.subscription?.status === 'active') return true;
+        return false;
+      },
+    },
+    {
       title: "Telefone",
       dataIndex: "personalData",
       key: "personalDataPhone",
