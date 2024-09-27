@@ -168,6 +168,14 @@ const ListView = (props) => {
       },
     },
     {
+      title: "Data de entrada",
+      dataIndex: "_createdAt",
+      key: "createdAt",
+      render: (e) => {
+        if (e) return new Date(e).toLocaleDateString("pt-BR");
+      },
+    },
+    {
       title: "Ações",
       key: "actions",
       width: 100,
